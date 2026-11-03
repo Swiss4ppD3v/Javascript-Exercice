@@ -25,5 +25,11 @@ return n > 2
  * @return {boolean} true if n is a multiple of m
  */
 export function isMult(n, m) {
-  // Write your code here
+  if (typeof n !== 'number' || Number.isNaN(n)) {
+    throw new Error('Invalid input')
+  }
+  if (typeof m !== 'number' || Number.isNaN(m)) {
+    throw new Error('Invalid input')
+  }
+  return n % m === 0;
 }
