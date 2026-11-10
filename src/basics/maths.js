@@ -3,7 +3,11 @@
  * @return {number} sphere volume
  */
 export function computeSphereVolume(diameter) {
-  // Write your code here
+  if (typeof diameter !== 'number' || Number.isNaN(diameter) || diameter < 0) {
+    throw new Error('Invalid input')
+  }
+  const rayon = diameter / 2
+  return (4 / 3) * Math.PI * Math.pow(rayon, 3)
 }
 
 /**
