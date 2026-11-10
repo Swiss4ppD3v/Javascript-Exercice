@@ -40,5 +40,9 @@ export function replaceElementsInArrayAtAGivenPlace(
   index,
   ...newElements
 ) {
-  // Write your code here
+  return [
+    ...array.slice(0, index),
+    ...newElements,
+    ...array.slice(index + newElements.length),
+  ];
 }
