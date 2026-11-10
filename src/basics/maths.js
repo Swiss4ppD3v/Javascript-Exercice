@@ -26,7 +26,16 @@ export function roundNumberToOneDecimals(n) {
  * @return {number} average with full precision
  */
 export function computeAverage(grades) {
-  // Write your code here
+  if (!Array.isArray(grades) || grades.length === 0) {
+    throw new Error('Invalid input')
+  }
+  for (const grade of grades) {
+    if (typeof grade !== 'number' || Number.isNaN(grade)) {
+      throw new Error('Invalid input')
+    }
+  }
+  const sum = grades.reduce((acc, grade) => acc + grade, 0)
+  return sum / grades.length
 }
 
 /**
