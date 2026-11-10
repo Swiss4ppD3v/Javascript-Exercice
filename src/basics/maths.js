@@ -43,5 +43,6 @@ export function computeAverage(grades) {
  * @return {number} rounded average to 1 decimal
  */
 export function roundedAverage(grades) {
-  // Write your code here
+  const average = computeAverage(grades)
+  return roundNumberToOneDecimals(average)
 }
