@@ -3,7 +3,17 @@
  * @return {array<string>} An array with all words isolated, and with empty strings removed
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
-  // Write your code here
+   if (!Array.isArray(array)) {
+    throw new Error('Input must be an array');
+  }
+  const result = [];
+  for (const str of array) {
+    if (typeof str === 'string') {
+      const words = str.split(' ').filter(word => word.trim() !== '');
+      result.push(...words);
+    }
+  }
+  return result;
 }
 
 /**
