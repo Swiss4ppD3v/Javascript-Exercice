@@ -23,7 +23,10 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 export function concatenateArrays(array1, array2) {
-  // Write your code here
+ while (!Array.isArray(array1) || !Array.isArray(array2)) {
+    throw new Error('Both inputs are not arrays, please provide valid arrays');
+  }
+  return [...array1, ...array2];
 }
 
 /**
