@@ -61,7 +61,7 @@ export function retrieveMaximumMinimumUserAges(users) {
  * @return {Object} An object retrieved by parsing the string
  */
 export function parseJavaScriptObjectNotation(string) {
-  // Write your code here
+  return JSON.parse(string);
 }
 
 
@@ -70,5 +70,5 @@ export function parseJavaScriptObjectNotation(string) {
  * @return {string} A string representing the given object
  */
 export function stringifyJavaScriptObjectNotation(object) {
-  // Write your code here
+  return JSON.stringify(object);
 }
