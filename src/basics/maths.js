@@ -7,7 +7,7 @@ export function computeSphereVolume(diameter) {
     throw new Error('Invalid input')
   }
   const rayon = diameter / 2
-  return (4 / 3) * Math.PI * Math.pow(rayon, 3)
+  return (4 / 3) * Math.PI * rayon ** 3
 }
 
 /**
@@ -15,10 +15,10 @@ export function computeSphereVolume(diameter) {
  * @return {number} number rounded to one decimal
  */
 export function roundNumberToOneDecimals(n) {
-   if (typeof n !== 'number' || Number.isNaN(n)) {
+  if (typeof n !== 'number' || Number.isNaN(n)) {
     throw new Error('Invalid input')
   }
-  return Math.round(n * 10) /10 ;
+  return Math.round(n * 10) / 10
 }
 
 /**

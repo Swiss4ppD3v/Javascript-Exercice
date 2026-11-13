@@ -23,5 +23,14 @@ export function factorial(n) {
  * @return {number} The nth Fibonacci number
  */
 export function fibonacci(n) {
-  // Write your code here
+  if (n < 0 || !Number.isInteger(n)) {
+    throw new Error('Invalid input')
+  }
+  if (n === 0) {
+    return 0
+  }
+  if (n === 1) {
+    return 1
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
 }

@@ -3,17 +3,17 @@
  * @return {array<string>} An array with all words isolated, and with empty strings removed
  */
 export function splitAllStringsByWordAndFilterEmptyOnes(array) {
-   if (!Array.isArray(array)) {
-    throw new Error('Input must be an array');
+  if (!Array.isArray(array)) {
+    throw new Error('Input must be an array')
   }
-  const result = [];
+  const result = []
   for (const str of array) {
     if (typeof str === 'string') {
-      const words = str.split(' ').filter(word => word.trim() !== '');
-      result.push(...words);
+      const words = str.split(' ').filter((word) => word.trim() !== '')
+      result.push(...words)
     }
   }
-  return result;
+  return result
 }
 
 /**
@@ -23,10 +23,10 @@ export function splitAllStringsByWordAndFilterEmptyOnes(array) {
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax
  */
 export function concatenateArrays(array1, array2) {
- while (!Array.isArray(array1) || !Array.isArray(array2)) {
-    throw new Error('Both inputs are not arrays, please provide valid arrays');
+  while (!Array.isArray(array1) || !Array.isArray(array2)) {
+    throw new Error('Both inputs are not arrays, please provide valid arrays')
   }
-  return [...array1, ...array2];
+  return [...array1, ...array2]
 }
 
 /**
@@ -44,5 +44,5 @@ export function replaceElementsInArrayAtAGivenPlace(
     ...array.slice(0, index),
     ...newElements,
     ...array.slice(index + newElements.length),
-  ];
+  ]
 }

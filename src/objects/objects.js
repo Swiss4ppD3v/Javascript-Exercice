@@ -10,12 +10,11 @@
  * The values of the properties should be "Toto", "Tutu"
  */
 export function createUserObject() {
-const user = {
-  first_name: "Toto",
-  last_name: "Tutu"
-};
-return user;
-
+  const user = {
+    first_name: 'Toto',
+    last_name: 'Tutu',
+  }
+  return user
 }
 
 /**
@@ -23,7 +22,7 @@ return user;
  * @return {string} A concatenation of the first and last name, separated with a space
  */
 export function accessPropertiesInObjects(object) {
-  return `${object.first_name} ${object.last_name}`;
+  return `${object.first_name} ${object.last_name}`
 }
 
 /**
@@ -34,10 +33,10 @@ export function accessPropertiesInObjects(object) {
  */
 export function iteratesThroughObjectValuesAndProperties(object) {
   const result = {
-    keys: Object.keys(object).map(keys=> keys.toUpperCase()),
-    values: Object.values(object).map(values => values.toLowerCase())
+    keys: Object.keys(object).map((keys) => keys.toUpperCase()),
+    values: Object.values(object).map((values) => values.toLowerCase()),
   }
-  return result;
+  return result
 }
 
 /**
@@ -47,10 +46,10 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  * @return {{younger: string, older: string}}
  */
 export function retrieveMaximumMinimumUserAges(users) {
-  const sortedUsers = [...users].sort((a,b) =>  a.age - b.age);
+  const sortedUsers = [...users].sort((a, b) => a.age - b.age)
   return {
     younger: sortedUsers[0].name,
-    older: sortedUsers[sortedUsers.length - 1].name
+    older: sortedUsers[sortedUsers.length - 1].name,
   }
 }
 
@@ -61,14 +60,13 @@ export function retrieveMaximumMinimumUserAges(users) {
  * @return {Object} An object retrieved by parsing the string
  */
 export function parseJavaScriptObjectNotation(string) {
-  return JSON.parse(string);
+  return JSON.parse(string)
 }
-
 
 /**
  * @param {Object} object
  * @return {string} A string representing the given object
  */
 export function stringifyJavaScriptObjectNotation(object) {
-  return JSON.stringify(object);
+  return JSON.stringify(object)
 }

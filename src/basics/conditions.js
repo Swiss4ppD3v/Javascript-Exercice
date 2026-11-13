@@ -13,10 +13,10 @@
  * @return {boolean} true if n is bigger than 2
  */
 export function isBiggerThan2(n) {
- if (typeof n !== 'number' || Number.isNaN(n)) {
-  throw new Error('Invalid input')
-}
-return n > 2
+  if (typeof n !== 'number' || Number.isNaN(n)) {
+    throw new Error('Invalid input')
+  }
+  return n > 2
 }
 
 /**
@@ -31,5 +31,5 @@ export function isMult(n, m) {
   if (typeof m !== 'number' || Number.isNaN(m)) {
     throw new Error('Invalid input')
   }
-  return n % m === 0;
+  return n % m === 0
 }
