@@ -36,7 +36,7 @@ export function iteratesThroughObjectValuesAndProperties(object) {
   const result = {
     keys: Object.keys(object).map(keys=> keys.toUpperCase()),
     values: Object.values(object).map(values => values.toLowerCase())
-  };
+  }
   return result;
 }
 
@@ -47,7 +47,11 @@ export function iteratesThroughObjectValuesAndProperties(object) {
  * @return {{younger: string, older: string}}
  */
 export function retrieveMaximumMinimumUserAges(users) {
-  // Write your code here
+  const sortedUsers = [...users].sort((a,b) =>  a.age - b.age);
+  return {
+    younger: sortedUsers[0].name,
+    older: sortedUsers[sortedUsers.length - 1].name
+  }
 }
 
 /**
@@ -59,6 +63,7 @@ export function retrieveMaximumMinimumUserAges(users) {
 export function parseJavaScriptObjectNotation(string) {
   // Write your code here
 }
+
 
 /**
  * @param {Object} object
