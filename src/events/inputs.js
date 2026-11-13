@@ -4,8 +4,18 @@
  * If the input is empty, you should not trigger the alert.
  */
 export function displayInputContentInAlertOnEnterKey() {
-  // Write your code here
-}
+  const inputElement = document.getElementById("write-some-text");
+
+inputElement.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      const inputValue = inputElement.value.trim();
+      
+      if (inputValue !== "") {
+        alert(inputValue);
+      }
+    }
+  });
+};
 
 /**
  * On the page, you have an HTML input with the id "list-input".
