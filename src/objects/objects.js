@@ -23,7 +23,7 @@ return user;
  * @return {string} A concatenation of the first and last name, separated with a space
  */
 export function accessPropertiesInObjects(object) {
-  // Write your code here
+  return `${object.first_name} ${object.last_name}`;
 }
 
 /**
