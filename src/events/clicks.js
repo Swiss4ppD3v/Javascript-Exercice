@@ -4,7 +4,9 @@
  * The alert text should contain "Button clicked"
  */
 export function reactToClickEvent() {
-  // Write your code here
+  document.getElementById("click-me").addEventListener("click",() => {
+    alert("Button clicked");
+  });
 }
 
 /**
