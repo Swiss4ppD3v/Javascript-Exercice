@@ -30,13 +30,38 @@ const enteringColor = ''
  * 3. When the input loses focus, reset the border color to the one it had before focus.
  */
 export function hoverFocusAndBlur() {
-  // Write your code here
+  if (document.getElementById("focus-me")) {
+    const inputElement = document.getElementById("focus-me");
+    const labelElement = document.querySelector('label[for="focus-me"]');
+    const originalLabelText = labelElement.textContent;
+    const originalBorderColor = inputElement.style.borderColor;
+
+    inputElement.addEventListener("mousemove", () => {
+      labelElement.textContent = "Yes, you hover me !";
+    });
+
+    inputElement.addEventListener("mouseleave", () => {
+      labelElement.textContent = originalLabelText;
+    });
+
+    inputElement.addEventListener("focus", () => {
+      let Color = randomRGB();
+      if (Color === originalBorderColor) {
+        Color = randomRGB();
+      }
+      inputElement.style.borderColor = Color;
+    });
+
+    inputElement.addEventListener("blur", () => {
+      inputElement.style.borderColor = originalBorderColor;
+    });
+  }
 }
 
 /**
  * On the same input from the previous exercise, you need to add a new behavior :
  * Each new character typed should randomly change the default border color of the input.
- * You don't need to change the current border color (which is controlled by the previous exercise),
+ * You don't need to change the curren1t border color (which is controlled by the previous exercise),
  * but you need to change the original color -- the one that will be restored when the input loses focus.
  * Also apply this new color to the text of the input's labels.
  */
