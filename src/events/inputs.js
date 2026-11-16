@@ -23,7 +23,19 @@ inputElement.addEventListener("keydown", (event) => {
  * the text should be added as a new item in the list with id "list".
  */
 export function addElementsInListOnEnterKey() {
-  // Write your code here
+    const inputList = document.getElementById("list-input");
+    inputList.addEventListener("keydown", (event) => {
+        if (event.key === "Enter") {
+           if (inputList.value.trim() !== "") {
+             const list = document.getElementById("list");
+             const item = document.createElement("li");
+            item.textContent = inputList.value.trim();
+            list.appendChild(item);
+            inputList.value = "";
+             }
+        }
+    });
+
 }
 
 /**
